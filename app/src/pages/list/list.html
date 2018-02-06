@@ -1,0 +1,108 @@
+<!--
+  Generated template for the ListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>列表示例</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p>基本列表</p>
+  <ion-list>
+      <ion-item>tom</ion-item>
+      <ion-item>jerry</ion-item>
+  </ion-list>
+  <p>按钮作为列表项</p>
+  <ion-list>
+      <button ion-item>Tom</button>
+      <button ion-item>Jerry</button>
+  </ion-list>
+  <p>列表边距</p>
+  <ion-list inset>
+    <ion-item>tom</ion-item>
+    <ion-item>jerry</ion-item>
+  </ion-list>
+  <p>无分割线列表</p>
+  <ion-list no-lines>
+    <ion-item>tom</ion-item>
+    <ion-item>jerry</ion-item>
+  </ion-list>
+  <p>列表分割线</p>
+  <ion-item-group>
+      <ion-item-divider>students</ion-item-divider>
+      <ion-item>tom</ion-item>
+      <ion-item>jerry</ion-item>
+      <ion-item-divider>teachers</ion-item-divider>
+      <ion-item>tom's teacher</ion-item>
+      <ion-item>jerry's teacher</ion-item>
+  </ion-item-group>
+  <p>列表头部</p>
+  <ion-list>
+    <ion-list-header>students</ion-list-header>
+    <ion-item>tom</ion-item>
+    <ion-item>jerry</ion-item>
+  </ion-list>
+  <p>图表列表项</p>
+  <ion-list>
+    <ion-item>
+       <ion-icon name="heart" item-start color="danger"></ion-icon>
+      Tom
+    </ion-item>
+  </ion-list>
+  <p>图表列表项</p>
+  <ion-list>
+    <ion-item>
+      jerry
+      <ion-icon name="heart" item-end color="danger"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <p>头像作为列表项</p>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/avatars/8-128.png"/>
+        <h2>Tom</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </ion-avatar>
+    </ion-item>
+  </ion-list>
+  <p>头像作为列表项</p>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-end>
+        <img src="assets/avatars/8-128.png"/>
+      </ion-avatar>
+      <h2>Jerry</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </ion-item>
+  </ion-list>
+  <p>滑动列表项</p>
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar>
+          <img src="assets/avatars/8-128.png"/>
+          <h2>Tom</h2>
+          <p>Lorem ipsum dolor sit amet,</p>
+        </ion-avatar>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button item-start color="light">
+        <ion-icon name="more"></ion-icon>
+        more
+        </button>
+        <button ion-button item-start color="light">
+          <ion-icon name="heart"></ion-icon>
+          love
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
