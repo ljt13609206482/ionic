@@ -17,6 +17,22 @@
   <p> tap 轻点</p>
   <ion-card (tap)="tapEvent()">
     <ion-item>tap here</ion-item>
-    <ion-item>{{tapNum}}}</ion-item>
+    <ion-item>{{tapNum}}</ion-item>
   </ion-card>
+  <p>press 点按</p>
+  <ion-card (press)="pressEvent()">
+    <ion-item>press here</ion-item>
+    <ion-item>{{pressNum}}</ion-item>
+  </ion-card>
+  <p>pan 移动</p>
+  <ion-card (pan)="panEvent()">
+    <ion-item>pan here</ion-item>
+    <ion-item>{{panNum}}</ion-item>
+  </ion-card>
+  <p>swipe 轻扫</p>
+  <ion-card (swipe)="swipeEvent()">
+    <ion-item>swipe here</ion-item>
+    <ion-item>{{swipeNum}}</ion-item>
+  </ion-card>
+
 </ion-content>

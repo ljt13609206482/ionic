@@ -10,7 +10,8 @@ import { ButtonPage } from '../pages/button/button';
 import {ListPage} from '../pages/list/list';
 import {CardPage} from '../pages/card/card';
 import  {FabPage} from '../pages/fab/fab';
-import {GesturePage} from '../pages/gesture/gesture'
+import {GesturePage} from '../pages/gesture/gesture';
+import {GridPage} from '../pages/grid/grid';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {GesturePage} from '../pages/gesture/gesture'
     ListPage,
     CardPage,
     FabPage,
-    GesturePage
+    GesturePage,
+    GridPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import {GesturePage} from '../pages/gesture/gesture'
     ListPage,
     CardPage,
     FabPage,
-    GesturePage
+    GesturePage,
+    GridPage
   ],
   providers: [
     StatusBar,
