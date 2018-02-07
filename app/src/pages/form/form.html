@@ -7,12 +7,71 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>form</ion-title>
+    <ion-title>form示例</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <p></p>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>UserName</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>PassWord</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-list-header>Hobbies</ion-list-header>
+    <ion-item>
+      <ion-label>TV</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>movie</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>play game</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Birthday</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD"></ion-datetime>
+    </ion-item>
+      <ion-list-header>Gender</ion-list-header>
+    <ion-list radio-group>
+      <ion-item>
+        <ion-label>Male</ion-label>
+        <ion-radio></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Female</ion-label>
+        <ion-radio></ion-radio>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label>City</ion-label>
+      <ion-select>
+        <ion-option>Beijing</ion-option>
+        <ion-option>Shanghai</ion-option>
+        <ion-option>Guangzhou</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Skill level</ion-label>
+      <ion-range></ion-range>
+    </ion-item>
+    <ion-item>
+      <ion-label>Subscribe our news?</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <button ion-button block> sign up</button>
 </ion-content>
