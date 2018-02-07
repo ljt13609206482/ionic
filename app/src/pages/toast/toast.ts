@@ -29,6 +29,22 @@ export class ToastPage {
     });
     toast.present();
   }
+  showToastPosition(position:string):void{
+    let toast=this.toastCtrl.create({
+      message:'position toast...',
+      duration:1000,
+      position:position
+    });
+    toast.present();
+  }
+  showToastClose():void{
+    let toast=this.toastCtrl.create({
+      message:'toast with close',
+      showCloseButton:true,
+      closeButtonText:'OK'
+    });
+    toast.present();
+  }
 
 
 }
