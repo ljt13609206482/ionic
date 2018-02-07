@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ListPage page.
+ * Generated class for the GesturePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,28 +10,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-list',
-  templateUrl: 'list.html'
+  selector: 'page-gesture',
+  templateUrl: 'gesture.html'
 })
-export class ListPage {
+export class GesturePage {
 
-//发起一次HTTP 请求，从服务器获取数据
-  items=[
-    'HTML',
-    'CSS',
-    'Agular',
-    'Node.js',
-    'JavaScript'
-  ];
-
+  tapNum:number=0;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ListPage');
+    console.log('ionViewDidLoad GesturePage');
   }
-  selectItem(item:string) {
-    console.log(`selected:${item}`)
+  tapEvent():void{
+    //...:void没有返回值
+    console.error("tapped...")
+    this.tapNum++;
   }
 
 }

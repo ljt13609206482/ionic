@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { ListPage } from './list';
+import { CardPage } from './card';
 
 @NgModule({
   declarations: [
-    ListPage,
+    CardPage,
   ],
   imports: [
-    IonicPageModule.forChild(ListPage),
-  ]
+    IonicPageModule.forChild(CardPage),
+  ],
 })
-export class ListPageModule {}
+export class CardPageModule {}

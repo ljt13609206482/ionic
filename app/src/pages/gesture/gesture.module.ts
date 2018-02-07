@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { ListPage } from './list';
+import { GesturePage } from './gesture';
 
 @NgModule({
   declarations: [
-    ListPage,
+    GesturePage,
   ],
   imports: [
-    IonicPageModule.forChild(ListPage),
-  ]
+    IonicPageModule.forChild(GesturePage),
+  ],
 })
-export class ListPageModule {}
+export class GesturePageModule {}

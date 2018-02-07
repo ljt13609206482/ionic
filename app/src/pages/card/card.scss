@@ -1,0 +1,13 @@
+page-card {
+  ion-card{
+    position: relative;
+    text-align: center;
+  }
+  #card{
+    position: absolute;
+    top: 20%;
+    font-weight: bold;
+    color: #ffffff;
+    left: 40%;
+  }
+}
