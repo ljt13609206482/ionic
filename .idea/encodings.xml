@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/app/package.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/app/app.module.ts" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/pages/button/button.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/pages/card/card.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/pages/card/card.scss" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/pages/fab/fab.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/pages/form/form.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/pages/gesture/gesture.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/pages/gesture/gesture.ts" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/pages/grid/grid.html" charset="UTF-8" />
@@ -15,5 +16,8 @@
     <file url="file://$PROJECT_DIR$/app/src/pages/home/home.ts" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/pages/list/list.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/pages/list/list.ts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/pages/toast/toast.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/pages/toast/toast.ts" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
