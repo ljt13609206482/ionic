@@ -7,6 +7,10 @@ app.get('/',(req,res)=>{
    //req:request
    // res:response
     res.end("it works...")
+});
+app.get('/signUp',(req,res)=>{
+    //...
+    res.end('sign up...')
 })
 
 //设置服务器端口号
