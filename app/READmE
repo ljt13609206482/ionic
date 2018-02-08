@@ -1,7 +1,7 @@
 一、Ionic 简介
 1. WEBAPP = WEB（基本的前端技术） + APP（移动端应用程序）
 2. 移动端应用程序的开发技术：
-	2.1 Native 原生开发 
+	2.1 Native 原生开发
         a. Android：Java/Kotlin
         b. iOS: Objective C/Swift
         c. Others: 0.02%
@@ -101,7 +101,7 @@
 		b. app/src/assets/avatars/default.png
 		c. <img src="assets/avatars/default.png"/>
 	26.8 滑动列表项
-  
+
 1. 配置 node 命令
     1.1 ionic serve -l
     1.2 修改 package.json 文件
