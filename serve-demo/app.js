@@ -10,7 +10,8 @@ app.get('/',(req,res)=>{
 });
 app.get('/signUp',(req,res)=>{
     //...
-    res.end('sign up...')
+    let email=req.query.email;
+    res.end(`email:${email}`)
 })
 
 //设置服务器端口号
