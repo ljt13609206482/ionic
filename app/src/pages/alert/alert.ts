@@ -11,7 +11,7 @@ import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angul
 @IonicPage()
 @Component({
   selector: 'page-alert',
-  templateUrl: 'alert.html',
+  templateUrl: 'alert.html'
 })
 export class AlertPage {
 
