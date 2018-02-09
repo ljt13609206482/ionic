@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import {HttpClient} from '@angular/common/http';
+
 
 /**
  * Generated class for the SignUpPage page.
@@ -25,7 +26,7 @@ export class SignUpPage {
     city:'BeiJing'
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient,public alertCtrl:AlertController) {
   }
 
   ionViewDidLoad() {
@@ -38,7 +39,15 @@ export class SignUpPage {
     this.httpClient.post(url,{user:this.user})
       .subscribe((res)=>{
         //请求成功的回调函数
-        console.error(res)
+        console.error(res);
+        //如果返回值为由向已经存在，在创建一个警告
+        if(res['status']==='exist'){
+           this.alertCtrl.create({
+             title:"Error",
+             subTitle:"Email is already exist",
+             buttons:['OK']
+           }).present()
+        }
       }),
       (err)=>{
         //请求失败的回调函数
