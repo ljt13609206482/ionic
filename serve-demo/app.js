@@ -4,6 +4,17 @@
 //引入依赖模块
 const express=require('express');
 const bodyParser=require('body-parser');
+const mysql=require('mysql');
+
+//创建连接池,并配置参数
+let pool=mysql.createPool({
+    host:"127.0.0.1",
+    port:3306,
+    database:"db",
+    user:"root",
+    password:"",
+    connectionLimit:10
+})
 
 //实例化一各对象
 let app=new express();
@@ -20,7 +31,19 @@ app.get('/',(req,res)=>{
 app.post('/signUp',(req,res)=>{
     //...
     //get:req.query.*
-    let user=req.body.user
+    let user=req.body.user;
+    let sql='INSERT INTO db.user VALUE(NULL,?,?,?,?,?,?)';
+    //租一个连接
+    //pool.getConnection((err,connection)=>{
+    //    if(err){
+    //        throw err;
+    //    }else{
+    //        connection.query((err,result)=>{})
+    //    }
+    //})
+    pool.query(sql,[user.email,user.username,user.password,user.gender,user.age,user.city],(err,result,fields)=>{
+        //...
+    })
 
     res.send('{"status":"ok"}')
     console.log("user:"+user);
