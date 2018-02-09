@@ -11,7 +11,6 @@ import {HttpClient} from '@angular/common/http';
 
 @IonicPage()
 @Component({
-  providers:[HttpClient],
   selector: 'page-sign-up',
   templateUrl: 'sign-up.html'
 })
