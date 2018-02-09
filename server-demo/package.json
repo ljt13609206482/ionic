@@ -1,0 +1,22 @@
+{
+  "name": "server-demo",
+  "version": "1.0.0",
+  "description": "ionic app server demo.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "supervisor app"
+  },
+  "keywords": [
+    "ionic",
+    "node.js",
+    "express"
+  ],
+  "author": "1709N",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}
