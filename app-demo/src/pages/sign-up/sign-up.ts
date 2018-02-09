@@ -35,7 +35,7 @@ export class SignUpPage {
     console.error(this.user);
     //发送HTTP请求
     let url='/signUp';
-    this.httpClient.post(url,{email:this.user.email,password:this.user.password})
+    this.httpClient.post(url,{user:this.user})
       .subscribe((res)=>{
         //请求成功的回调函数
         console.error(res)

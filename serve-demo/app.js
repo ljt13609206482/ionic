@@ -20,12 +20,10 @@ app.get('/',(req,res)=>{
 app.post('/signUp',(req,res)=>{
     //...
     //get:req.query.*
-    let email=req.body.email;
-    let username=req.body.username;
-    let password=req.body.password;
+    let user=req.body.user
 
     res.send('{"status":"ok"}')
-    console.log("email:"+email);
+    console.log("user:"+user);
 });
 
 
