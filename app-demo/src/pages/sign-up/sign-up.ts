@@ -34,14 +34,16 @@ export class SignUpPage {
   signUp():void{
     console.error(this.user);
     //发送HTTP请求
-    //let url='http://127.0.0.1:3000/signUp';
-    //this.httpClient.post(url,{email:this.user.email,password:this.user.password})
-    //  .subscribe((res)=>{
-    //    console.errer(res)
-    //  }),
-    //  (err)=>{
-    //    console.error(err)
-    //  }
+    let url='/signUp';
+    this.httpClient.post(url,{email:this.user.email,password:this.user.password})
+      .subscribe((res)=>{
+        //请求成功的回调函数
+        console.error(res)
+      }),
+      (err)=>{
+        //请求失败的回调函数
+        console.error(err)
+      }
   }
 
 }

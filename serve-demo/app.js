@@ -7,8 +7,10 @@ const bodyParser=require('body-parser');
 
 //实例化一各对象
 let app=new express();
-//配置中间件
-app.use(bodyParser.urlencoded({extended:true}));
+//配置中间件,解析post请求信息
+//app.use(bodyParser.urlencoded({extended:true}));
+//接收json格式的请求参数
+app.use(bodyParser.json());
 
 app.get('/',(req,res)=>{
    //req:request
@@ -22,8 +24,10 @@ app.post('/signUp',(req,res)=>{
     let username=req.body.username;
     let password=req.body.password;
 
-    res.end(`email:${email}`)
-})
+    res.send('{"status":"ok"}')
+    console.log("email:"+email);
+});
+
 
 //设置服务器端口号
 app.listen(3000);
