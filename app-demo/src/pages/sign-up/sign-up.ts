@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController,ToastController } from 'ionic-angular';
 import {HttpClient} from '@angular/common/http';
 
 
@@ -26,7 +26,12 @@ export class SignUpPage {
     city:'BeiJing'
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient,public alertCtrl:AlertController) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public httpClient: HttpClient,
+              public alertCtrl:AlertController,
+              public toastCtrl:ToastController
+  ) {
   }
 
   ionViewDidLoad() {
@@ -46,6 +51,12 @@ export class SignUpPage {
              title:"Error",
              subTitle:"Email is already exist",
              buttons:['OK']
+           }).present()
+        }else if(status==='err'){
+           this.toastCtrl.create({
+              message:"服务器错误",
+              duration:1000,
+             position:"middle"
            }).present()
         }
       }),
