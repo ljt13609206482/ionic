@@ -11,6 +11,7 @@ import {HttpClient} from '@angular/common/http';
 
 @IonicPage()
 @Component({
+  providers:[HttpClient],
   selector: 'page-sign-up',
   templateUrl: 'sign-up.html'
 })
@@ -34,14 +35,14 @@ export class SignUpPage {
   signUp():void{
     console.error(this.user);
     //发送HTTP请求
-    let url='http://127.0.0.1:3000/signUp';
-    this.httpClient.post(url,{email:this.user.email,password:this.user.password})
-      .subscribe((res)=>{
-        console.errer(res)
-      }),
-      (err)=>{
-        console.error(err)
-      }
+    //let url='http://127.0.0.1:3000/signUp';
+    //this.httpClient.post(url,{email:this.user.email,password:this.user.password})
+    //  .subscribe((res)=>{
+    //    console.errer(res)
+    //  }),
+    //  (err)=>{
+    //    console.error(err)
+    //  }
   }
 
 }

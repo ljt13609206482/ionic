@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import {HttpModule} from '@angular/common'
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -15,7 +16,7 @@ import {GridPage} from '../pages/grid/grid';
 import {FormPage} from '../pages/form/form';
 import {ToastPage} from '../pages/toast/toast';
 import {AlertPage} from '../pages/alert/alert'
-import {IconPage} from '../pages/icon/icon'
+import {IconPage} from '../pages/icon/icon';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import {IconPage} from '../pages/icon/icon'
   providers: [
     StatusBar,
     SplashScreen,
+    HttpModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
