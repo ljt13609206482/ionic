@@ -40,12 +40,12 @@ app.post('/signUp', (req, res) => {
     if (err) throw err;
     if (results.affectedRows === 1) {
       // sign up success
-      res.send({"status": "ok"});
-    } else {
-      // sign up failed
-      res.send({"status": "err"});
-    }
-  });
+res.send({"status": "ok"});
+} else {
+  // sign up failed
+  res.send({"status": "err"});
+}
+});
 });
 
 app.listen(3000);
