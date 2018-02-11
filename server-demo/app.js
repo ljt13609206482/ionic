@@ -48,9 +48,21 @@ res.send({"status": "ok"});
 });
 });
 
-app.post('/signIn',(req,res)=>{
-  let user=req.body.user;
-  console.log(`user:`,user)
-  res.send('{"status":"ok"}')
+app.post('/signIn',(req,res)=> {
+  let user = req.body.user;
+  //console.log(`user:`, user);
+  let sql = 'SELECT * FROM db.user WHERE email=? AND  password=?';
+  pool.query(sql, [user.email, user.password], (err, results)=> {
+    if (err) {
+      throw err
+    }
+    if (results.length === 1) {
+      // sign in successful
+      res.send({"status": "ok"});
+    } else {
+      // sign in failed
+      res.send({"status": "err"});
+    }
+  });
 });
 app.listen(3000);

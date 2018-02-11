@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController} from 'ionic-angular';
+import {IonicPage, NavController,AlertController} from 'ionic-angular';
 import {HttpClient} from '@angular/common/http';
 
 @IonicPage()
@@ -14,7 +14,8 @@ export class HomePage {
     password:''
   };
   constructor(public navCtrl: NavController,
-              public httpClient: HttpClient
+              public httpClient: HttpClient,
+              public alertCtrl:AlertController
   ) {
   }
 
@@ -27,6 +28,16 @@ export class HomePage {
     this.httpClient.post('/signIn', {user:this.user})
       .subscribe((res)=>{
         console.error(res)
+        if(res['status']==='ok'){
+          this.navCtrl.push('IndexPage')
+          console.error("登录成功!")
+        }else{
+          this.alertCtrl.create({
+            title: 'Error',
+            subTitle: 'Email or password is error.',
+            buttons:['OK']
+          })
+        }
       },
       (err)=>{
         console.error(err)
