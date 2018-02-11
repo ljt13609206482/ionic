@@ -33,17 +33,18 @@ CREATE TABLE db.product(
 DROP PROCEDURE IF EXISTS db.gen_sample_data;
 DELIMITER $$
 CREATE PROCEDURE db.gen_sample_data()
-  BEGIN
-    DECLARE counter INT DEFAULT 0;
-    WHILE counter < 1000 DO
-      INSERT INTO db.product(title,detail,price)VALUE(
-        CONCAT('product title: ',counter),
-        CONCAT('product detail: ',counter),
-        floor(RAND()*10000)
-      );
-      SET counter = counter + 1;
-    END WHILE;
-  END $$;
+    BEGIN
+        DECLARE counter INT DEFAULT 0;
+        WHILE counter < 1000 DO
+            INSERT INTO db.product(title, detail, price)
+            VALUE(
+                CONCAT('title: ', counter),
+                CONCAT('product detail: ', counter),
+                FLOOR(RAND() * 10000)
+            );
+            SET counter = counter + 1;
+        END WHILE;
+    END $$
 DELIMITER;
 
 CALL db.gen_sample_data();
