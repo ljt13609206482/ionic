@@ -18,7 +18,11 @@ export class SignUpPage {
     city: 'Shanghai'
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient, public alertCtrl: AlertController, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public httpClient: HttpClient,
+              public alertCtrl: AlertController,
+              public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
