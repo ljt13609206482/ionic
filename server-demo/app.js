@@ -48,4 +48,9 @@ res.send({"status": "ok"});
 });
 });
 
+app.post('/signIn',(req,res)=>{
+  let user=req.body.user;
+  console.log(`user:`,user)
+  res.send('{"status":"ok"}')
+});
 app.listen(3000);

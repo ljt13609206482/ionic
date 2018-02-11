@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController} from 'ionic-angular';
+import {HttpClient} from '@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -12,7 +13,9 @@ export class HomePage {
     email:'',
     password:''
   };
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+              public httpClient: HttpClient
+  ) {
   }
 
   signUpPage():void {
@@ -21,5 +24,13 @@ export class HomePage {
   signIn():void{
     //发送http请求
     console.error(this.user)
+    this.httpClient.post('/signIn', {user:this.user})
+      .subscribe((res)=>{
+        console.error(res)
+      },
+      (err)=>{
+        console.error(err)
+      }
+    )
   }
 }
