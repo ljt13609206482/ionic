@@ -15,6 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class IndexPage {
   items=[];
+  //在构造器中初始化items数组
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     for(let i=0;i<30;i++){
       this.items.push(this.items.length)
