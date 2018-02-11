@@ -17,12 +17,22 @@ export class IndexPage {
   items=[];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     for(let i=0;i<30;i++){
-      this.items.push(i)
+      this.items.push(this.items.length)
     }
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad IndexPage');
+  }
+  doInfinite(event):void{
+    //定时器作用，模拟http请求的时间延迟
+    setTimeout(()=>{
+      for(let i=0;i<30;i++ ){
+        this.items.push(this.items.length)
+      }
+      //todo http
+      event.complete();
+    },3000)
   }
 
 }
