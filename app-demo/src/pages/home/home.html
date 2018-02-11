@@ -1,20 +1,22 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>SignIn page</ion-title>
+    <ion-title>
+      首页
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <ion-label floating > Email</ion-label>
+      <ion-label floating>Email</ion-label>
       <ion-input></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating> PassWord</ion-label>
-      <ion-input></ion-input>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password"></ion-input>
     </ion-item>
   </ion-list>
-  <button ion-button block>Sign In</button>
-  <button ion-button block color="secondary" (tap)="JumpPage('SignUpPage')">Sign up</button>
+  <button ion-button block>Sign in</button>
+  <button (tap)="signUpPage()" ion-button block color="secondary">Sign up</button>
 </ion-content>

@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>signUp page</ion-title>
+    <ion-title>sign up page</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,40 +16,52 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <ion-label floating>Email</ion-label>
+      <ion-label floating>Email {{user.email}}</ion-label>
       <ion-input [(ngModel)]="user.email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating>UserName</ion-label>
+      <ion-label floating>Username {{user.username}}</ion-label>
       <ion-input [(ngModel)]="user.username"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating>PassWord</ion-label>
+      <ion-label floating>Password {{user.password}}</ion-label>
       <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
-    <ion-list-header>Gender</ion-list-header>
+    <ion-list-header>Gender {{user.gender}}</ion-list-header>
     <ion-list radio-group [(ngModel)]="user.gender">
       <ion-item>
         <ion-label>Male</ion-label>
-        <ion-radio value="male"></ion-radio>
+        <ion-radio checked value="male"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-label>Female</ion-label>
         <ion-radio value="female"></ion-radio>
       </ion-item>
     </ion-list>
-    <ion-list-header>city</ion-list-header>
     <ion-item>
-      <ion-select [(ngModel)]="user.city">
-        <ion-option  value="BeiJing">BeiJing</ion-option>
-        <ion-option value="ShangHai">ShangHai</ion-option>
-        <ion-option Value="GuangZhou">GuangZhou</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>Age</ion-label>
+      <ion-label floating>Age {{user.age}}</ion-label>
       <ion-input [(ngModel)]="user.age"></ion-input>
     </ion-item>
+    <ion-list-header>City {{user.city}}</ion-list-header>
+    <ion-item>
+      <ion-select [(ngModel)]="user.city">
+        <ion-option value="Beijing">Beijing</ion-option>
+        <ion-option value="Shanghai" selected>Shanghai</ion-option>
+        <ion-option value="Guangzhou">Guangzhou</ion-option>
+      </ion-select>
+    </ion-item>
   </ion-list>
-  <button ion-button block color="secondary" (tap)="signUp()">Sign Up</button>
+  <button (tap)="signUp()" ion-button block color="secondary">Sign up</button>
 </ion-content>
+
+
+
+
+
+
+
+
+
+
+
+

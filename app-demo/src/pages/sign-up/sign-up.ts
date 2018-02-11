@@ -1,73 +1,59 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,AlertController,ToastController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, AlertController, ToastController} from 'ionic-angular';
 import {HttpClient} from '@angular/common/http';
-
-
-/**
- * Generated class for the SignUpPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
   selector: 'page-sign-up',
-  templateUrl: 'sign-up.html'
+  templateUrl: 'sign-up.html',
 })
 export class SignUpPage {
-  //定义对象保存用户基本信息
-  user={
-    email:'',
-    username:'',
-    password:'',
-    gender:'male',
-    age:'',
-    city:'BeiJing'
+
+  user = {
+    email: '',
+    username: '',
+    password: '',
+    gender: 'male',
+    age: '',
+    city: 'Shanghai'
   };
 
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public httpClient: HttpClient,
-              public alertCtrl:AlertController,
-              public toastCtrl:ToastController
-  ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient, public alertCtrl: AlertController, public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignUpPage');
   }
-  signUp():void{
-    console.error(this.user);
-    //发送HTTP请求
-    let url='/signUp';
-    this.httpClient.post(url,{user:this.user})
-      .subscribe((res)=>{
-        //请求成功的回调函数
-        console.error(res);
-        //如果返回值为由向已经存在，在创建一个警告
-        if(res['status']==='exist'){
-           this.alertCtrl.create({
-             title:"Error",
-             subTitle:"Email is already exist",
-             buttons:['OK']
-           }).present()
-        }else if(res['status']==='err'){
-           this.toastCtrl.create({
-              message:"服务器错误",
-              duration:1000,
-             position:"middle"
-           }).present()
-        }else{
-          //status:ok
-          // 页面跳转至HomePage
-          this.navCtrl.push('HomePage')
-        }
-      }),
-      (err)=>{
-        //请求失败的回调函数
-        console.error(err)
-      }
-  }
 
+  signUp(): void {
+    this.httpClient.post('/signUp', {user:this.user})
+      .subscribe(
+        res => {
+          let status = res['status'];
+          if (status === 'exist') {
+            // 注册之前，查询邮箱是存在的，不能注册
+            this.alertCtrl.create({
+              title: 'Error',
+              subTitle: 'Email is already exist.',
+              buttons:['OK']
+            }).present();
+          } else if (status === 'err') {
+            // Insert 时发生了其它错误
+            this.toastCtrl.create({
+              message: '服务器错误',
+              duration: 1000,
+              position: 'middle'
+            }).present();
+          } else {
+            // status 是 ok
+            // 页面跳转 HomePage
+            this.navCtrl.push('HomePage');
+          }
+        },
+        err => {
+            console.error(err);
+            // todo
+        }
+      );
+  }
 }

@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import {SignUpPage} from '../sign-up/sign-up'
+import {Component} from '@angular/core';
+import {IonicPage, NavController} from 'ionic-angular';
+
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  signUpPage;
 
   constructor(public navCtrl: NavController) {
-    this.signUpPage=SignUpPage;
-
   }
 
+  signUpPage():void {
+    this.navCtrl.push('SignUpPage');
+  }
 }
