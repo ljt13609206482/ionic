@@ -52,12 +52,16 @@ export class SignUpPage {
              subTitle:"Email is already exist",
              buttons:['OK']
            }).present()
-        }else if(status==='err'){
+        }else if(res['status']==='err'){
            this.toastCtrl.create({
               message:"服务器错误",
               duration:1000,
              position:"middle"
            }).present()
+        }else{
+          //status:ok
+          // 页面跳转至HomePage
+          this.navCtrl.push('HomePage')
         }
       }),
       (err)=>{
