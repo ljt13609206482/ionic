@@ -73,7 +73,7 @@ app.get('/product/:page',(req,res)=>{
   let sql='SELECT title FROM db.product LIMIT ? OFFSET ?';
   pool.query(sql,[pageSize,(page-1)],(err,result)=>{
     if(err){throw err};
-
+    res.send(result)
   })
 });
 

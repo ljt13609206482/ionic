@@ -38,14 +38,13 @@ CREATE PROCEDURE db.gen_sample_data()
         WHILE counter < 1000 DO
             INSERT INTO db.product(title, detail, price)
             VALUE(
-                CONCAT('title: ', counter),
+                CONCAT('title: ', counter + 1),
                 CONCAT('product detail: ', counter),
                 FLOOR(RAND() * 10000)
             );
             SET counter = counter + 1;
         END WHILE;
     END $$
-DELIMITER;
 
 CALL db.gen_sample_data();
 

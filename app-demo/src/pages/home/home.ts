@@ -27,7 +27,7 @@ export class HomePage {
     console.error(this.user)
     this.httpClient.post('/signIn', {user:this.user})
       .subscribe((res)=>{
-        console.error(res)
+        //console.error(res)
         if(res['status']==='ok'){
           this.navCtrl.push('IndexPage')
           console.error("登录成功!")
