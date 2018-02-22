@@ -16,11 +16,12 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ProductPage {
 
-  product:any;
+  product:any=[];
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public httpClient: HttpClient) {
+              public httpClient: HttpClient
+  ) {
   }
 
   ionViewDidLoad() {
@@ -30,6 +31,7 @@ export class ProductPage {
       .subscribe(
       (res) => {
         this.product = res;
+        console.error(this.product.length)
       },
       (err) => {
         console.error(err);
