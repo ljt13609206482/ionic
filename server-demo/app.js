@@ -66,12 +66,12 @@ app.post('/signIn',(req,res)=> {
   });
 });
 
-app.get('/product/:page',(req,res)=>{
+app.get('/products/:page',(req,res)=>{
   //获取前端通过地址传递的参数page
   let page=req.params.page;
-  const pageSize=20;
-  let sql='SELECT title FROM db.product LIMIT ? OFFSET ?';
-  pool.query(sql,[pageSize,(page-1)],(err,result)=>{
+  const pageSize=20;//每页记录数
+  let sql=`SELECT * FROM db.product LIMIT ${pageSize} OFFSET ?`;
+  pool.query(sql,[(page-1)*pageSize],(err,result)=>{
     if(err){throw err};
     res.send(result)
   })

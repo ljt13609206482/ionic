@@ -7,16 +7,8 @@
   },
   "proxies": [
     {
-      "path": "/signUp",
-      "proxyUrl": "http://127.0.0.1:3000/signUp"
-    },
-    {
-      "path": "/signIn",
-      "proxyUrl": "http://127.0.0.1:3000/signIn"
-    },
-    {
-      "path": "/product",
-      "proxyUrl": "http://127.0.0.1:3000/product"
+      "path": "/",
+      "proxyUrl": "http://127.0.0.1:3000/"
     }
   ]
 }
