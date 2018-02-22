@@ -16,7 +16,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class IndexPage {
 
-  products:Array<any>=[];
+  products:any=[];
   page: number = 1;
   hasMoreData: boolean = true;
 

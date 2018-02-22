@@ -16,7 +16,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ProductPage {
 
-  pictures;
+  product:any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -25,11 +25,12 @@ export class ProductPage {
 
   ionViewDidLoad() {
     let productId = this.navParams.get('productId');
-    let url = `/pictures/${productId}`;
+    let url = `/product/${productId}`;
     this.httpClient.get(url)
       .subscribe(
       (res) => {
-        this.pictures = res;
+        this.product = res;
+        console.error(this.product[0]);
       },
       (err) => {
         console.error(err);
