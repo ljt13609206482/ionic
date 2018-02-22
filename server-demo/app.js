@@ -27,7 +27,7 @@ app.post('/signUp', (req, res) => {
     }
   });
 
-  sql = 'INSERT INTO db.user VALUE(NULL, ?, ?, ?, ?, ?, ?)';
+  sql = 'INSERT INTO db.user(email,username,password,gender,age,city) VALUE(?, ?, ?, ?, ?, ?)';
 
   pool.query(sql, [
     user.email,

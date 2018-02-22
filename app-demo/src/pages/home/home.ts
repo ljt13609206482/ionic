@@ -33,7 +33,7 @@ export class HomePage {
         if(res['status']==='ok'){
           //保存用户邮箱
           this.storage.set('user',this.user);
-          this.navCtrl.push('UserPage')
+          this.navCtrl.push('UserPage');
           console.error("登录成功!")
         }else{
           this.alertCtrl.create({

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Storage} from '@ionic/storage'
 
 /**
  * Generated class for the UserPage page.
@@ -11,15 +12,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-user',
-  templateUrl: 'user.html',
+  templateUrl: 'user.html'
 })
 export class UserPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user={};
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private storage:Storage
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserPage');
+    this.storage.get('user').then(value=>{
+      this.user=value;
+      console.error(this.user);
+    })
+  }
+  signOut():void{
+    //注销
+    this.storage.clear();
+    this.navCtrl.push('HomePage')
   }
 
 }

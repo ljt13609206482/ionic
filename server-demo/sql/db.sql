@@ -15,7 +15,8 @@ CREATE TABLE db.user (
   gender   VARCHAR(255) NOT NULL
   COMMENT 'gender',
   age      INT COMMENT 'age',
-  city     VARCHAR(255) COMMENT 'city'
+  city     VARCHAR(255) COMMENT 'city',
+  avatar VARCHAR(255) COMMENT 'avatar' DEFAULT 'default.png'
 )
   COMMENT 'user table';
 
