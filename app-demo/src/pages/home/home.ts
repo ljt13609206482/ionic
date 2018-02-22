@@ -32,7 +32,7 @@ export class HomePage {
         //console.error(res)
         if(res['status']==='ok'){
           //保存用户邮箱
-          this.storage.set('email',this.user.email);
+          this.storage.set('user',this.user);
           this.navCtrl.push('IndexPage')
           console.error("登录成功!")
         }else{

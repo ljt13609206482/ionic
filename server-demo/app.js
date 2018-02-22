@@ -58,7 +58,7 @@ app.post('/signIn',(req,res)=> {
     }
     if (results.length === 1) {
       // sign in successful
-      res.send({"status": "ok"});
+      res.send({"status": "ok","user":results[0]});
     } else {
       // sign in failed
       res.send({"status": "err"});

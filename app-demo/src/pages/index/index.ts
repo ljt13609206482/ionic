@@ -20,7 +20,7 @@ export class IndexPage {
   products:any=[];
   page: number = 1;
   hasMoreData: boolean = true;
-  email:string;
+  user:any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -41,8 +41,9 @@ export class IndexPage {
         console.error(err);
       }
     );
-    this.storage.get('email').then(value=>{
-      this.email=value;
+    this.storage.get('user').then(value=>{
+      this.user=value;
+      console.error(this.user)
     })
   }
 
