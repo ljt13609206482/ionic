@@ -48,6 +48,21 @@ CREATE PROCEDURE db.gen_sample_data()
 
 CALL db.gen_sample_data();
 
+--创建商品图片表
+DROP TABLE IF EXISTS db.picture;
+CREATE TABLE db.picture(
+    id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'id PK',
+    name VARCHAR(255) NOT NULL COMMENT '图片文件名',
+    productId INT COMMENT '商品 id FK',
+    FOREIGN KEY(productId)
+    REFERENCES db.product(id)
+) COMMENT 'picture table';
+
+--插入商品信息
+INSERT INTO db.picture VALUE(NULL, '1.jpg', 1);
+INSERT INTO db.picture VALUE(NULL, '2.jpg', 1);
+INSERT INTO db.picture VALUE(NULL, '3.jpg', 1);
+INSERT INTO db.picture VALUE(NULL, '4.jpg', 1);
 -- 查询字段注释
 SHOW FULL COLUMNS FROM db.user;
 

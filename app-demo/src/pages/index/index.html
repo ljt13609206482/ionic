@@ -29,7 +29,7 @@
   <!--</ion-list>-->
 
   <div *ngFor="let product of products">
-      <div style="width: 50%;float: left;">
+      <div style="width: 50%;float: left;" (tap)="productPage(product.id)">
         <ion-card>
           <img src="assets/product/{{product.picture}}" alt=""/>
           <ion-card-content style="background: #ffefd5">
