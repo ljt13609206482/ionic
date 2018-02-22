@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController,AlertController} from 'ionic-angular';
 import {HttpClient} from '@angular/common/http';
+import {Storage} from '@ionic/storage'
 
 @IonicPage()
 @Component({
@@ -13,9 +14,10 @@ export class HomePage {
     email:'',
     password:''
   };
-  constructor(public navCtrl: NavController,
-              public httpClient: HttpClient,
-              public alertCtrl:AlertController
+  constructor(private navCtrl: NavController,
+              private httpClient: HttpClient,
+              private alertCtrl:AlertController,
+              private storage:Storage
   ) {
   }
 
@@ -29,6 +31,8 @@ export class HomePage {
       .subscribe((res)=>{
         //console.error(res)
         if(res['status']==='ok'){
+          //保存用户邮箱
+          this.storage.set('email',this.user.email);
           this.navCtrl.push('IndexPage')
           console.error("登录成功!")
         }else{

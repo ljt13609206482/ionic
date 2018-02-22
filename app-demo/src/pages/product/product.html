@@ -15,13 +15,13 @@
 
   <ion-slides pager style="height: 60%">
     <ion-slide *ngFor="let picture of product" style="background-color: #ddd">
-      <img src="assets/product/{{picture.name}}" alt="">
+      <img src="assets/products/{{picture.name}}" alt="">
     </ion-slide>
   </ion-slides>
   <div>
-    <!--<h2>{{product.title}}</h2>-->
-    <!--<p>{{product.detail}}</p>-->
-    <!--<b style="color:#900">{{product.price}}</b>-->
+    <h2>{{product[0]?.title}}</h2>
+    <p>{{product[0]?.detail}}</p>
+    <b style="color: #900">￥ {{product[0]?.price}}</b>
   </div>
 
 </ion-content>

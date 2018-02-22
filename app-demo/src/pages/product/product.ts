@@ -30,7 +30,6 @@ export class ProductPage {
       .subscribe(
       (res) => {
         this.product = res;
-        console.error(this.product[0]);
       },
       (err) => {
         console.error(err);
