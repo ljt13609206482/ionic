@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {HttpClient} from '@angular/common/http';
-import {Storage} from '@ionic/storage'
+
 
 /**
  * Generated class for the IndexPage page.
@@ -20,12 +20,11 @@ export class IndexPage {
   products:any=[];
   page: number = 1;
   hasMoreData: boolean = true;
-  user:any;
+
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public httpClient: HttpClient,
-              public storage:Storage
+              public httpClient: HttpClient
   ) {
 
   }
@@ -41,10 +40,6 @@ export class IndexPage {
         console.error(err);
       }
     );
-    this.storage.get('user').then(value=>{
-      this.user=value;
-      console.error(this.user)
-    })
   }
 
   loadMoreData(infiniteScrollEvent): void {
